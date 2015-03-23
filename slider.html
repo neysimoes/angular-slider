@@ -1,0 +1,13 @@
+<div class="bar">
+	<div class="selection">
+	</div>
+	<span ng-style="{left:'{{(100/ceiling)*i}}%'}" ng-if="template !== 'a'" class="step-mark" ng-repeat="i in [] | looprange:ceiling"></span>
+</div>
+<div class="handle low"></div>
+<div class="handle high">
+	<div class="slider-progress"></div>
+</div>
+<div class="bubble limit low">{{ values.length ? values[floor || 0] : floor }}</div>
+<div class="bubble limit high">{{ values.length ? values[ceiling || values.length - 1] : ceiling }}</div>
+<div class="bubble value low">{{ values.length ? values[local.ngModelLow || local.ngModel || 0] : local.ngModelLow || local.ngModel || 0 }}</div>
+<div class="bubble value high">{{ values.length ? values[local.ngModelHigh] : local.ngModelHigh }}</div>
